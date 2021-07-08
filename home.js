@@ -140,7 +140,7 @@ function Solve(Platform_Name){
                     }
                 }
             }
-            col5.innerHTML = `<a class="text-decoration-none " href="${contest.url}"><i class="bi bi-arrow-up-right"></i></a>`;
+            col5.innerHTML = `<a class="text-decoration-none " target = "_blank" href="${contest.url}"><i class="bi bi-arrow-up-right"></i></a>`;
 
             row.append(col1);
             row.append(col2);
