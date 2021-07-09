@@ -1,0 +1,167 @@
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile Analyzer</title>
+</head>
+<body style="background-color: #e4e1e8;">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a href="contests.html"><button class="btn btn-dark btn-lg">Constests</button></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" data-bs-toggle="modal" data-bs-target="#usernameform" id="Codeforces"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Codeforces</a></button>
+                        <!-- <button class="btn btn-dark text-light btn-lg mx-2 nav-link" data-bs-toggle="modal" data-bs-target="#usernameform" id="Codeforces">Codeforces</button> -->
+                        
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" data-bs-toggle="modal" data-bs-target="#usernameform" id="Leetcode"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Leetcode</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" data-bs-toggle="modal" data-bs-target="#usernameform" id="Codechef"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Codechef</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" data-bs-toggle="modal" data-bs-target="#usernameform" id="Spoj"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Spoj</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+             <a href="#" class="navbar-brand">Frontend using Bootstrap</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navmenu">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                         <a href="#learn" class="nav-link">Things to Learn</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#faq" class="nav-link">Questions</a>
+                     </li>
+                 </ul>
+             </div>
+        </div>
+    </nav> -->
+    <section class="text-light bg-dark text-center text-sm-start p-5 p-lg-0 pt-lg-5">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between mt-5 mt-lg-0">
+                <div>
+                     <h3>Analyze your <span class="text-warning">Competetive Profile</h3></span>
+                     <p class="lead">
+                         See your accuracy and summary of the problems you solved on top coding  websites.
+                     </p>
+                     <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#knowhow">Know How</button>
+                 </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="img/comp.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Subscribe -->
+   <!-- <section class="bg-primary text-light p-2">
+        <div class="container">
+            <div class="d-md-flex me-0">
+                <h6 class="my-3 me-5">Sign Up for latest updates</h6>
+                <div class="input-group m-3 ms-md-5 sub-input">
+                <input type="text" class="form-control" placeholder="Enter your mail" aria-label="Enter your mail" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                <button class="btn btn-dark" type="button">Enter</button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </section> -->
+
+
+     <!-- Output -->
+    
+    <div class="conatiner mb-3" id="output">
+        <!-- <h3 style="display:none;" class="text-center mb-3" id="solved_problems"> Problems Solved</h3> -->
+    </div>
+    
+    <section style="background-color: #e4e1e8;">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col">
+                    <p class="fs-5" style="text-align: center;">
+                        Analyze your profiles in popular coding platforms like CodeChef, CodeForces, LeetCode and Spoj in one place.
+                See your problems solved and ranks in contests given by clicking on specific websites. Learn from your mistakes !!
+                </p>
+                <p class="text-center fs-2 text-success" style="font-weight: bold;">Happy Coding! <i class="bi bi-emoji-smile"></i> </p> 
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="usernameform" tabindex="-1" aria-labelledby="usernameformLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="usernameformLabel">Enter Username</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="getprofile" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-light fixed-bottom" id="footer">
+        <div class="container">
+            <p class="lead my-0">
+                Copyright &copy; 2021 Contest-Calender
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal Know How-->
+  <div class="modal hide fade in" id="knowhow" tabindex="-1" role="dialog" aria-labelledby="knowhowTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h5 class="modal-title" id="knowhowTitle">Profile Analyzer</h5>
+        </div>
+        <div class="modal-body">
+            <p class="text-justify">
+                Get to know your ratings and problems solved in various Coding Competetive websites in one place. The home page lets you do this by clicking the required 
+                website and typing in the username for the given website. If the username is valid you can see your ratings and problems solved in the specified website.
+                Now analyze your performance in various competetions in one place.
+                On clicking the Contests tab you will get a list of upcoming and running contests in many supported websites like CodeForces, CodeChef, HackerEarth, HackerRank,etc.
+                You may also get list of upcoming and running contests for each website by clicking on each tab. 
+            </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <script src="sandbox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.table-responsive {
+    max-height:300px;
+}
+.hover{
+    cursor: pointer;
+}
+.text-justify{
+    text-align: justify;
+}
+/* #footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+ } */
+
+ .centered {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

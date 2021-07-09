@@ -1,0 +1,529 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Profile Analyzer</title>
+    <!-- <style>
+        #loading {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            opacity: 0.7;
+            background-color: #fff;
+            z-index: 99;
+        }
+
+        #loading-image {
+            position: absolute;
+            top: 100px;
+            left: 240px;
+            z-index: 100;
+        } -->
+    </style>
+</head>
+<body>
+    <!-- <div id="loading">
+        <img id="loading-image" src="img/ajax-loader.gif" alt="Loading..." />
+      </div> -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark by-3 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" style="float: left;" href="index.html">Home</a>
+            <!-- <button class="btn btn-dark btn-lg" onclick=" relocate_home()">Home</button>
+            <script>
+                function relocate_home()
+                {
+                     location.href = "index.html";
+                } 
+            </script> -->
+                
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+
+                        <button class="btn btn-dark text-light btn-lg" id="All"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">All</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="Codeforces"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Codeforces</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="Leetcode"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">LeetCode</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="Codechef"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">CodeChef</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="Hackerearth"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HackerEarth</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="Hackerrank"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">HackerRank</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="TopCoder"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">TopCoder</a></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark text-light btn-lg mx-2 nav-link" id="AtCoder"><a class="text-decoration-none text-light" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">AtCoder</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+             <a href="#" class="navbar-brand">Frontend using Bootstrap</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navmenu">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                         <a href="#learn" class="nav-link">Things to Learn</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#faq" class="nav-link">Questions</a>
+                     </li>
+                 </ul>
+             </div>
+        </div>
+    </nav> -->
+    <!-- <section class="text-light bg-dark text-center text-sm-start p-5 p-lg-0 pt-lg-5">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between mt-5 mt-lg-0">
+                <div>
+                     <h3>Analyze your <span class="text-warning">Competetive Profile</h3></span>
+                     <p class="lead">
+                         See your accuracy and summary of the problems you solved on top coding  websites.
+                     </p>
+                     <button class="btn btn-primary btn-lg">Know How</button>
+                 </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="img/comp.png" alt="">
+            </div>
+        </div>
+    </section> -->
+
+    
+    <!-- Search -->
+   <section class="text-dark p-2 mt-5" id="search" style="display: none;">
+        <!-- <div class="container">
+            <div class="d-md-flex me-0">
+                <h6 class="my-3 me-5">Search for Contests</h6>
+                <div class="input-group m-3 ms-md-5 sub-input">
+                    <input id="myInput" type="search" onkeyup="Search()" class="form-control" placeholder="Type a keyword" aria-label="Enter your mail" aria-describedby="basic-addon2">
+                </div>
+            </div>
+        </div> -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col offset-2">
+                    <div class="input-group w-75 align-items-center">
+                        <input type="text" id="myInput" class="form-control" onkeyup="Search()" placeholder="Search for Contests" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" onclick="Search()" type="button">Search</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Running Contest -->
+
+    <div class="container mt-4" id="Running_Contest_Table_div">
+        <p class="container text-center fs-3 text-bold lead" id="Running_Contest_para" style="display: none; font-weight: bold;">Running Contests</p>
+        <div class="row">
+            <div class="col">
+                <table class="table py-3 table-responsive" id="Running_Contest_Table" style="display: none;">
+                    <thead id="Running_Thead">
+                        <tr>
+                            <th style="width:100px" class="text-center hover" data-table="Running_Contest" data-column="name" data-order="desc" scope="col">Contest Name &#9650</th>
+                            <th style="width:100px" class="text-center" scope="col">Website</th>
+                            <th style="width:100px" class="text-center hover" data-table="Running_Contest" data-column="date" data-order="desc" scope="col">Start &#9650</th>
+                            <th style="width:100px" class="text-center" scope="col">Duration</th>
+                            <th style="width:100px" scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Running_Contest">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Contest -->
+
+    <div class="container mt-4" id="Upcoming_Contest_Table_div">
+        <p class="container text-center fs-3 text-bold lead" id="Upcoming_Contest_para" style="display: none; font-weight: bold;">Upcoming Contests</p>
+        <div class="row">
+            <div class="col">
+                <table class="table py-3 table-responsive" id="Upcoming_Contest_Table" style="display: none;">
+                    <thead id="Upcoming_Thead">
+                        <tr>
+                            <th style="width:100px" class="text-center hover" data-table="Upcoming_Contest" data-column="name" data-order="desc" scope="col">Contest Name &#9650</th>
+                            <th style="width:100px" class="text-center" scope="col">Website</th>
+                            <th style="width:100px" class="text-center hover" data-table="Upcoming_Contest" data-column="date" data-order="desc" scope="col">Start &#9650</th>
+                            <th style="width:100px" class="text-center" scope="col">Duration</th>
+                            <th style="width:100px" scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Upcoming_Contest">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container mt-5" id="Upcoming_Contest_Table_div">
+        <p class="container text-center fs-3 lead" id="Upcoming_Contest_para" style="display: none; font-weight: bold;">Upcoming Contests</p>
+        <div class="row">
+            <div class="col">
+                <table class="table py-3 table-responsive" id="Upcoming_Contest_Table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th class="text-center hover" data-table="Upcoming_Contest" data-column="name" data-order="desc" scope="col">Contest Name &#9650</th>
+                            <th class="text-center" scope="col">Website</th>
+                            <th class="text-center hover" data-table="Upcoming_Contest" data-column="date" data-order="desc" scope="col">Start &#9650</th>
+                            <th class="text-center" scope="col">Duration</th>
+                            <th scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Upcoming_Contest">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> -->
+
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4" style="min-height: 380px;">
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Codeforces
+                            </h3>
+                            <p class="card-text">
+                                Codeforces is a website that hosts competitive programming contests. It is maintained by programmers from ITMO University led by Mikhail Mirzayanov.
+                            </p>
+                            <a href="https://www.codeforces.com/" target="_blank" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                HackerRank
+                            </h3>
+                            <p class="card-text">
+                                HackerRank is a technology hiring platform that is the standard for assessing developer skills for over 2,000+ companies around the world.
+                            </p>
+                            <a href="https://leetcode.com/" target="_blank" class="btn btn-primary mt-3">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Codechef
+                            </h3>
+                            <p class="card-text">
+                                CodeChef was started in 2009 as an educational initiative for the programming community by Directi, an Indian software products company.
+                            </p>
+                            <a href="https://www.codechef.com/" target="_blank" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center g-4 mt-2">
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                AtCoder
+                            </h3>
+                            <p class="card-text">
+                                AtCoder is a programming contest site for anyone from beginners to experts which holds weekly programming contests online which help in building confidence.
+                            </p>
+                            <a href="https://www.topcoder.com/" target="_blank" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                LeetCode
+                            </h3>
+                            <p class="card-text">
+                                LeetCode is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.
+                            </p>
+                            <a href="https://www.hackerrank.com/" target="_blank" class="btn btn-primary mt-4">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light" style="min-height: 380px;">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                HackerEarth
+                            </h3>
+                            <p class="card-text">
+                                HackerEarth is an Indian software company headquartered in San Francisco, US, that provides enterprise software that helps organisations.
+                            </p>
+                            <a href="https://www.hackerearth.com/" target="_blank" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row text-center g-4 mt-2">
+                <div class="col-md offset-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                AtCoder
+                            </h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam quos debitis necessitatibus facere enim.
+                            </p>
+                            <a href="https://atcoder.jp/" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md">
+
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Leetcode
+                            </h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam quos debitis necessitatibus facere enim.
+                            </p>
+                            <a href="https://leetcode.com/" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 m-3">
+                                <i class="bi bi-code"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Codechef
+                            </h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam quos debitis necessitatibus facere enim.
+                            </p>
+                            <a href="https://www.codechef.com/" class="btn btn-primary">Visit <span class="bi bi-link"></span></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="fixed-bottom bg-dark text-center text-light">
+        <div class="container">
+            <p class="lead mb-0">
+                Copyright &copy; 2021 Contest-Calender
+            </p>
+        </div>
+    </footer>
+    
+    
+    <script>
+        function Search() {
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            // console.log(filter);
+
+            // for running contest
+
+            let Running_Contest = document.getElementById('Running_Contest');
+            let tr1 = Running_Contest.getElementsByTagName('tr');
+            // console.log(tr1);
+            for (let i = 0; i < tr1.length; i++) {
+                let td = tr1[i].getElementsByTagName('td')[0];
+
+                if (td) {
+                    let textvalue0 = tr1[i].getElementsByTagName('td')[0].textContent;
+                    if (textvalue0.toUpperCase().indexOf(filter) > -1) {
+                        tr1[i].style.display = "";
+                    } else {
+                        tr1[i].style.display = "none";
+                    }
+                }
+            }
+
+            // for upcoming contest
+
+            let Upcoming_Contest = document.getElementById('Upcoming_Contest');
+            let tr2 = Upcoming_Contest.getElementsByTagName('tr');
+            // console.log(tr2);
+            for (let i = 0; i < tr2.length; i++) {
+                let td = tr2[i].getElementsByTagName('td')[0];
+
+                if (td) {
+                    let textvalue0 = tr2[i].getElementsByTagName('td')[0].textContent;
+                    if (textvalue0.toUpperCase().indexOf(filter) > -1) {
+                        tr2[i].style.display = "";
+                    } else {
+                        tr2[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // function convertDate(d) {
+        //     var p = d.split("/");
+
+        //     // console.log(p);
+        //     let date = {
+        //         "day": p[0],
+        //         "month": p[1],
+        //         "year": p[2].substr(0, 4)
+        //     }
+        //     return date;
+        // }
+        // convertDate("12/7/2021");
+
+        // function compare(a, b) {
+        //     const date1 = convertDate(a.date);
+        //     const date2 = convertDate(b.date);
+
+        //     console.log(date1);
+
+        //     if (date1.year === date2.year)
+        //     {
+        //         // console.log("year equal");
+        //         if (date1.month === date2.month)
+        //         {
+        //             return date1.day < date2.day;
+        //         } 
+        //         else 
+        //         {
+        //             return date1.month < date2.month;
+        //         }
+        //     }
+        //     else 
+        //     {
+        //         return date1.year > date2.year;
+        //     }
+        // }
+
+        $('th').on('click', function () {
+
+            var column = $(this).data('column');
+            var order = $(this).data('order');
+            let text = $(this).html();
+            var datatable = $(this).data('table');
+
+            var myTab = document.getElementById(datatable);
+            var myArray = [];
+            // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+            for (i = 0; i < myTab.rows.length; i++) {
+                let row = {
+                    'name' : myTab.rows.item(i).cells.item(0).innerHTML,
+                    'website' : myTab.rows.item(i).cells.item(1).innerHTML,
+                    'date' : myTab.rows.item(i).cells.item(2).innerHTML,
+                    'duration' : myTab.rows.item(i).cells.item(3).innerHTML,
+                    'link' : myTab.rows.item(i).cells.item(4).innerHTML,
+                }
+                myArray.push(row);
+            }
+
+            // console.log(column,order,text);
+
+            text = text.substring(0, text.length - 1);
+
+            if (order == 'desc')
+            {
+                // if(text.toUpperCase()=="START " || text.toUpperCase()=="START"){
+                //     // console.log("Jai Bajrang bali");
+                //     myArray.sort(compare);
+                //     $(this).data('order', "asc");
+                //     text += '&#9660';
+                //     console.log(myArray);
+                // }else{
+                    $(this).data('order', "asc");
+                    myArray.sort((a, b) => a[column].toUpperCase() > b[column].toUpperCase() ? 1 : -1);
+                    text += '&#9660';
+                // }
+            } 
+            else 
+            {
+                    $(this).data('order', "desc");
+                    myArray.sort((a, b) => a[column].toUpperCase() < b[column].toUpperCase() ? 1 : -1);
+                    text += '&#9650';
+            }
+            $(this).html(text);
+            buildTable(myArray,datatable);
+        })
+
+        function buildTable(data,datatable) {
+            var table = document.getElementById(datatable);
+            // console.log("Inside Build Table");
+            // console.log(table);
+            table.innerHTML = ''
+            for (var i = 0; i < data.length; i++) {
+                var row = `<tr>
+            					<td style="width:100px" class="text-center">${data[i].name}</td>
+            					<td style="width:100px" class="text-center">${data[i].website}</td>
+            					<td style="width:100px" class="text-center">${data[i].date}</td>
+            					<td style="width:100px" class="text-center">${data[i].duration}</td>
+            					<td style="width:100px" class="text-center">${data[i].link}</td>
+            			  </tr>`
+                table.innerHTML += row;
+            }
+        }
+
+    </script>
+    <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script>
+        $(window).load(function() {
+          $('#loading').hide();
+        });
+    </script> -->
+</body>
+</html>
